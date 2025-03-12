@@ -8,7 +8,7 @@ def load_pretrained_model(model_name):
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
         torch_dtype=torch.float16,
-        low_cpu_mem_usage=True
+        device_map="auto"
     )
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     device = "cuda" if torch.cuda.is_available() else "cpu"
