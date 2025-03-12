@@ -32,7 +32,7 @@ with st.spinner("Loading model..."):
     base_model_name = "facebook/opt-1.3b"
     model_A, tokenizer, device = load_pretrained_model(base_model_name)
     # Load the fine-tuned best model (Model D) from the saved adapter files.
-    model_D = PeftModel.from_pretrained(model_A, "./modelD")
+    model_D = PeftModel.from_pretrained("Samarth7Hathwar/model-d-translation")
     model_D = model_D.to(device)
 st.success("Model loaded successfully!")
 
