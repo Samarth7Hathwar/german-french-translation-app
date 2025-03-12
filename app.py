@@ -12,7 +12,6 @@ def load_pretrained_model(model_name):
     )
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    model = model.to(device)
     return model, tokenizer, device
 
 def generate_translation(german_text, model, tokenizer, max_new_tokens=50, num_beams=4):
