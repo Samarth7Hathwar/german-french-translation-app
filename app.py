@@ -2,6 +2,7 @@ import streamlit as st
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import PeftModel
+import os
 
 @st.cache_resource
 def load_model():
