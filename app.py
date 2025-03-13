@@ -9,6 +9,7 @@ def load_model():
         "facebook/opt-1.3b",
         torch_dtype=torch.float16,
         device_map="auto"
+        low_cpu_mem_usage=True
     )
     tokenizer = AutoTokenizer.from_pretrained("facebook/opt-1.3b")
     tokenizer.pad_token = tokenizer.eos_token
