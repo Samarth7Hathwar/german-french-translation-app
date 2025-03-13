@@ -19,7 +19,8 @@ def load_model():
         base_model,
         "Samarth7Hathwar/german-french-translation-app",
         subfolder="modelD",
-        device_map="auto"
+        revision="main",  # Important for GitHub files
+        use_auth_token=False
     )
     return model, tokenizer
 
