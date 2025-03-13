@@ -17,10 +17,8 @@ def load_model():
     # Load adapter from GitHub
     model = PeftModel.from_pretrained(
         base_model,
-        "Samarth7Hathwar/german-french-translation-app",
-        subfolder="modelD",
-        revision="main",  # Important for GitHub files
-        use_auth_token=False
+        os.path.join(os.getcwd(), "modelD"), 
+        device_map="auto"
     )
     return model, tokenizer
 
